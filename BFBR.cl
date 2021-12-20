@@ -33,13 +33,13 @@
 ))
 
 
-(defparameter BR_Ingredient_Similaires '
+(defparameter BR_Ingredient_Similaires '(
                 (jus_citron  ( ((citron 1) (presse 1) (difficulte 1)) ))
                 (zeste_orange ( ((orange 1) (rape 1) (difficulte 1)) ))
                 (jus_tomate (  ((tomate 1) (mixeur 1) (difficulte 2)) ))
                 (jus_orange ( ((orange 1) (difficulte 1)) (fanta 1 (difficulte 0)) (orangina 1 difficulte 0) ))
                 (tonic ((limonade 1) (swheps 1) ))        )
-
+)
 
 
 
