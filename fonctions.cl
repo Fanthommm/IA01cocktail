@@ -1,10 +1,11 @@
 ;FONCTIONS
 
 (defun ListIngredients (regle)
-    (let ((nil Liste))
-    (dolist (x regle Liste)
-        (push (car x) Liste)
-    ))
+    (let ((Liste nil)(regle (cdr regle)))
+        (loop (while (or (not (eq (car regle) 'difficulte)) (not (eq (car regle) nil))))
+            (push (pop regle) Liste)
+        )
+    )
 )
 
 (defun IsKnown (BR element)
@@ -99,3 +100,11 @@
 ;DIFFICULTE PAR DEFAULT = 5
 ;ALCOLEMIE PAR DEFAULT = 3
 
+(defun UpdateBF (regle BF)
+    (let ((retirer (cadr regle)))
+    ;faire une liste des "retirer" qui s'arrete à difficulte
+        (dolist (x retirer BF)
+            (
+        )
+    )
+)
