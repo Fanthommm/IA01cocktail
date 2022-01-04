@@ -8,7 +8,11 @@
         )
         (return-from ListIngredients Liste)
     )
-)
+ )
+
+(ListIngredients (car BR_Recette))
+ 
+
 
 (defun IsKnown (BR element)
         (loop while BR
@@ -17,7 +21,8 @@
                 (if tmp (return-from IsKnown (car tmp)))
             )
         )
-)
+  )
+
 ;(IsKnown BR_Recette 'vodka)
 ;(IsKnown BR_Recette 'poupi)
          
@@ -143,20 +148,21 @@
 ;ALCOLEMIE PAR DEFAULT = 3
 
 (defun UpdateBF (regle BF)
-    (let ((retirer (ListIngredients regle)))
+  (let ((retirer (ListIngredients regle)))
         (dolist (x retirer BF)
-            (if (not (eq (assoc x BF) nil))
-                (setq BF (rplacd (assoc x BF) (- (cadr (assoc x BF)) (cadr x))))
+            (if (not (eq (assoc (car x) BF) nil))
+                (setq BF (rplacd (assoc (car x) BF) (- (cadr (assoc (car x) BF)) (cadr x))))
             )
         )
     )
 )
+
+(UpdateBF (car BR_Recette) BF)
 
 (defun SearchReplacement (ingredient regle Bremplacement)
   (let ((regle2 (copy-tree (cadr regle)))(remplacant (cdr (assoc ingredient Bremplacement))))
         (setq regle2 (rplaca (assoc ingredient regle2) remplacant))
         (return-from SearchReplacement regle2)
     )
-  )
+)
 
-(searchreplacement 'jus_citron (caddr(cddr(cddr(cddr(cddr BR_Recette))))) BR_Ingredient_Similaires)

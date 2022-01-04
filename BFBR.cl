@@ -1,5 +1,6 @@
 (defparameter BF '((gin 50) (eau 100) (rhum 30) (rape 1) (sirop_citron 10) (tonic 20) (orange 1) (citron 3) (limonade 10) (difficulte 3)))
 
+
 (defparameter BR_Recette '(
                 (perroquet ((sirop_menthe 2)  (ricard 4) (eau 8) (difficulte 1) (petillant 0) (fruite 0) (niveau_alcoolemie 2)))
                 (punch ((sirop_sucre 2) (rhum 5) (citron 1) (difficulte 2) (petillant 0) (fruite 1) (niveau_alcoolemie 2)))
