@@ -49,7 +49,6 @@
 )
 
 (defun AskCriteria (BF)
-
     (let ((break T)) ;break servira à interrompre la boucle si la saisie est correcte
             (format t "Choix de la difficulte pour la recette [1-5] ?~%")
             (format t "(Entrez -1 si vous ne voulez pas imposer de restrictions particulières sur la difficulte)~%")
@@ -94,7 +93,7 @@
         )
     )
 
-    (let ((break T)) ;break servira à interrompre la boucle si la saisie est correcte
+    (let ((break T)) ;break servira � interrompre la boucle si la saisie est correcte
         (format t "Cocktail fruite ? [0 si non, 1 si oui] ?~%")
         (format t "(Entrez -1 si les deux)~%")
         (setq answer (read))
@@ -116,7 +115,7 @@
         )
     )
 
-    (let ((break T)) ;break servira à interrompre la boucle si la saisie est correcte
+    (let ((break T)) ;break servira a� interrompre la boucle si la saisie est correcte
         (format t "Choix du taux d'alcool pour la recette [0-3] ?~%")
         (format t "(Entrez -1 si vous ne voulez pas imposer de restrictions particulieres sur le taux d'alcool)~%")
         (setq answer (read))
@@ -143,6 +142,7 @@
 )
 (AskBF BR_Recette nil)
 
+; CHECKER PQ CA MARCHE PAS CHEZ CLEA AVEC CHARACTEr
 
 ;DIFFICULTE PAR DEFAULT = 5
 ;ALCOLEMIE PAR DEFAULT = 3
@@ -159,10 +159,12 @@
 
 (UpdateBF (car BR_Recette) BF)
 
-(defun SearchReplacement (ingredient regle Bremplacement)
-  (let ((regle2 (copy-tree (cadr regle)))(remplacant (cdr (assoc ingredient Bremplacement))))
+(defun SearchReplacement (ingredient regle)
+  (let ((regle2 (copy-tree (cadr regle)))(remplacant (cdr (assoc ingredient BR_Ingredient_Similaires))))
         (setq regle2 (rplaca (assoc ingredient regle2) remplacant))
         (return-from SearchReplacement regle2)
     )
 )
+(SearchReplacement 'jus_citron (caddr(cddr(cddr(cddr(cddr BR_Recette))))))
+
 
