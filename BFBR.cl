@@ -1,9 +1,9 @@
-(defparameter BF '((gin 50) (rhum 30) (rape 1) (jus_orange 4) (sirop_grenadine 10) (jus_citron 4) (sirop_citron 10) (vodka 50) (eau 400) (tonic 20) (orange 1) (citron 3) (sirop_sucre 2) (limonade 10) (difficulte 2) (petillant 0) (fruite -1) (niveau_alcoolemie 3)))
+(defparameter BF '((gin 50) (rhum 30) (rape 1) (jus_orange 4) (citron 7) (sirop_grenadine 10) (citron 4) (sirop_citron 10) (vodka 50) (eau 400) (tonic 20) (orange 1)  (sirop_sucre 2) (limonade 10) (difficulte 2) (presse 1) (petillant 0) (fruite -1) (niveau_alcoolemie 3)))
 
 (defparameter BF '((rhum 30) (jus_orange 6) (sirop_grenadine 10) (jus_citron 4) (sirop_citron 10) (eau 400) (tonic 20) (sirop_sucre 2) (tabasco 3) (baileys 9) (lait 9) (vodka 10) (sel 5) (poivre 5) (difficulte 3) (petillant -1) (fruite -1) (niveau_alcoolemie 3)))
 
 (defparameter BR_Recette '(
-               (perroquet ((sirop_menthe 2) (ricard 4) (eau 8) (difficulte 1) (petillant 0) (fruite 0) (niveau_alcoolemie 2)))
+                (perroquet ((sirop_menthe 2) (ricard 4) (eau 8) (difficulte 1) (petillant 0) (fruite 0) (niveau_alcoolemie 2)))
                 (punch ((sirop_sucre 2) (rhum 5) (citron 1) (difficulte 1) (petillant 0) (fruite 1) (niveau_alcoolemie 2)))
                 (pina_colada ((lait_coco 4) (rhum 6) (jus_ananas 12) (difficulte 1) (petillant 0) (fruite 1) (niveau_alcoolemie 2)))
                 (mojito ((rhum 5) (menthe 7) (jus_citron 1) (sucre 10) (difficulte 5) (petillant 0) (fruite 0) (niveau_alcoolemie 2)))
@@ -43,13 +43,12 @@
 
 
 (defparameter BR_Ingredient_Similaires '(
-                (jus_citron  (((citron 1) (presse 1)))) 
-                (zeste_orange (((orange 1) (rape 1))))
-                (jus_tomate (((tomate 1) (mixeur 1))))
-                (jus_orange (((orange 1) (mixeur 1)) ((fanta 1 ))  ((orangina 1))))
-                (tonic (((limonade 1)) ((swheps 1))))
-                (glacon (((eau 2) (freezer 1)))))
-))
+                (jus_citron  ((citron 2) (jus_ananas 1))) 
+                (zeste_orange ((orange 1)))
+                (jus_tomate ((tomate 2)))
+                (jus_orange ((orange 2)(fanta 1)))
+                (tonic ((limonade 1)(swheps 1)))
+                (glacon ((eau2)))))
                                          
 (Ingredient_a_remplacer ((Recette 1)(Recete 2)(Recette 3)))
 Ex Recette 1 : ((Ingredient1 2)(Ingredient1 3))
@@ -62,7 +61,7 @@ Ex Recette 1 : ((Ingredient1 2)(Ingredient1 3))
 
 ;Replacement(ingredient_a_remplacer recette);
 ;Si il existe une regle avec cet ingrédient dans la base:
-;Pour chaque ingrédients remplacant, ou liste d'ingredients remplaçant: (faire un dolist)
+;Pour chaque ingrédients remplacant possible: (faire un dolist)
 ;      regarder si l'utilisateur possède tous les elements de cette liste et EN BONNE QUANTITE (refaire un dolist) 
 ;      si oui :
 ;             modifier la recette passé en parametre en remplacant l'igrédient par tous les ingrédients qui la remplacent 
