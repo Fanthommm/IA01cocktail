@@ -1,4 +1,4 @@
-(defparameter BF '((gin 50) (rhum 30) (rape 1) (jus_orange 4) (citron 7) (sirop_grenadine 10) (citron 4) (sirop_citron 10) (vodka 50) (eau 400) (tonic 20) (orange 1)  (sirop_sucre 2) (limonade 10) (difficulte 2) (presse 1) (petillant 0) (fruite -1) (niveau_alcoolemie 3)))
+(defparameter BF '((gin 50) (rhum 30) (rape 1) (jus_orange 8) (citron 7) (sirop_grenadine 10) (citron 4) (sirop_citron 10) (vodka 50) (eau 400) (tonic 20) (orange 1)  (sirop_sucre 2) (limonade 10) (difficulte 2) (presse 1) (petillant 0) (fruite -1) (niveau_alcoolemie 3)))
 
 (defparameter BR_Recette '(
                 (perroquet ((sirop_menthe 2) (ricard 4) (eau 8) (difficulte 1) (petillant 0) (fruite 0) (niveau_alcoolemie 2)))
@@ -30,7 +30,7 @@
                 (tequila_sunrise ((tequila 6) (jus_orange 20) (sirop_grenadine 2) (orange 1) (difficulte 3) (petillant 0) (fruite 1) (niveau_alcoolemie 2)))
                 (sex_on_the_beach  ((jus_ananas 6) (vodka 3) (liqueur_peche 3) (jus_cranberry 10) (difficulte 2) (petillant 0) (fruite 1) (niveau_alcoolemie 2)))
                 (planters_punch ((rhum 6) (jus_citron 2) (jus_orange 2) (sirop_grenadine 1) (difficulte 2) (petillant 0) (fruite 1) (niveau_alcoolemie 2)))
-                (shot_get ((get27 5) (eau_gazeuze) (difficulte 1) (petillant 1) (fruite 0) (niveau_alcoolemie 2)))          
+                (shot_get ((get27 5) (eau_gazeuze 5) (difficulte 1) (petillant 1) (fruite 0) (niveau_alcoolemie 2)))          
                 (melon_ball ((jus_ananas 6) (vodka 6) (difficulte 1) (petillant 0) (fruite 1) (niveau_alcoolemie 2)))
                 (washington_apple  ((jus_pomme 5) (whisky 6) (jus_cranberry 6) (difficulte 1) (petillant 0) (fruite 1) (niveau_alcoolemie 2)))
                 (orgasm ((baileys 6) (lait 6) (difficulte 1) (petillant 0) (fruite 0) (niveau_alcoolemie 2)))
@@ -41,12 +41,21 @@
 
 
 (defparameter BR_Ingredient_Similaires '(
-                (jus_citron  ((citron 2) (jus_ananas 1))) 
-                (zeste_orange ((orange 1)))
+                (jus_citron  ((citron 2) (jus_ananas 1)(jus_pomme 1)(jus_orange 1)))
+                (jus_ananas  ((ananas 1) (jus_citron 1)(jus_pomme 1)(jus_orange 1)))     
+                (jus_pomme  ((pomme 3) (jus_citron 1)(jus_ananas 1)(jus_orange 1))) 
+                (zeste_citron ((citron 1)(zeste_orange 1)))
+                (zeste_orange ((orange 1)(zeste_citron 1)))
                 (jus_tomate ((tomate 2)))
-                (jus_orange ((orange 2)(fanta 1)))
-                (tonic ((limonade 1)(swheps 1)))
-                (glacon ((eau2)))))
+                (jus_orange ((orange 2) (multifruit 1)(fanta 1)(jus_mangue 1)(jus_ananas 1)(jus_pomme 1)(jus_citron 1)))
+                (tonic ((limonade 1)(swheps 1) (eau_gazeuze 1)))
+                (limonade ((tonic 1)(swheps 1) (eau_gazeuze 1)))
+                (shweps ((limonade 1)(tonic 1) (eau_gazeuze 1)))
+                (eau_gazeuze ((limonade 1)(swheps 1) (tonic 1)))
+                (rhum ((vodka 1)))
+                (vodka ((rhum 1)))
+                (jus_framboise ((sirop_framboise 1)(jus_fraise 1) (jus_cranberry 1) (sirop_fraise 1) (sirop_violette 1) (sirop_grenadine 1)))
+                (glacon ((eau_froide2)))))
                                          
 (Ingredient_a_remplacer ((Recette 1)(Recete 2)(Recette 3)))
 Ex Recette 1 : ((Ingredient1 2)(Ingredient1 3))

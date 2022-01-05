@@ -38,7 +38,7 @@
   (let ((NewRecette NIL) (newtemp NIL))
     (if (assoc (car IR) (cadr recette))
         (push (list (car IR) (+ (cadr (assoc (car IR) (cadr recette))) (cadr IR))) newtemp)
-        (push (list IR) newtemp))
+        (push (list (car IR) (* (cadr IAR) (cadr IR))) newtemp))
     (dolist (x (cadr recette) newtemp )
       (if (And (not(equal x IAR)) (not(equal (car x) (car IR))))
           (push X newtemp)
@@ -116,7 +116,7 @@
 (TestValidity '(cocktail_du_pauvre1 ((vodka 13) (sirop_citron 6) (eau 14) (difficulte 1) (petillant 0) (fruite 1) (niveau_alcoolemie 3))))
 (TestValidity '(cocktail_du_pauvre2 ((vodka 13) (sirop_grenadine 6) (eau 14) (difficulte 1) (petillant 0) (fruite 1) (niveau_alcoolemie 3))))
 (TestValidity '(cocktail_du_pauvre3 ((vodka 13) (sirop_menthe 6) (eau 14) (difficulte 1) (petillant 0) (fruite 0) (niveau_alcoolemie 3))));; ---> FAUX
-
+(TestValidity '(melon_ball ((jus_ananas 6) (vodka 6) (difficulte 1) (petillant 0) (fruite 1) (niveau_alcoolemie 2))))
 ;;Si on a les attributs fruite et petillant il suffit de regarder si testValidityBool renvoi true et on continue, si renvoi false on arret
 ;;Si non il suffit de regarder si le deuxieme argument de la sous liste de la recette est >= a l'equivalent dans la base de fait
 
