@@ -1,7 +1,5 @@
 (defparameter BF '((gin 50) (rhum 30) (rape 1) (jus_orange 4) (citron 7) (sirop_grenadine 10) (citron 4) (sirop_citron 10) (vodka 50) (eau 400) (tonic 20) (orange 1)  (sirop_sucre 2) (limonade 10) (difficulte 2) (presse 1) (petillant 0) (fruite -1) (niveau_alcoolemie 3)))
 
-(defparameter BF '((rhum 30) (jus_orange 6) (sirop_grenadine 10) (jus_citron 4) (sirop_citron 10) (eau 400) (tonic 20) (sirop_sucre 2) (tabasco 3) (baileys 9) (lait 9) (vodka 10) (sel 5) (poivre 5) (difficulte 3) (petillant -1) (fruite -1) (niveau_alcoolemie 3)))
-
 (defparameter BR_Recette '(
                 (perroquet ((sirop_menthe 2) (ricard 4) (eau 8) (difficulte 1) (petillant 0) (fruite 0) (niveau_alcoolemie 2)))
                 (punch ((sirop_sucre 2) (rhum 5) (citron 1) (difficulte 1) (petillant 0) (fruite 1) (niveau_alcoolemie 2)))
