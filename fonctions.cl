@@ -92,9 +92,13 @@
 
 ;Retourne la recette si une recette est valide NIl si non
 (defun TestValidity (recette)
-  (let ((condition (conditions (car recette))))
+  (let ((condition NIL) (RecetteReturned recette))
+    (if (assoc (car recette) BR_Recette)
+        (setq condition (conditions (car recette)))
+        (setq condition (cadr recette)))
     (dolist (x condition recette)                                              ; on parcours tous les elements conditions de la recette
-      (if ( OR (eq (car x) 'petillant ) (eq (car x) 'fruite ) )   ; Si l'element est la caracteristique petillant ou fruite
+      (if (equal RecetteReturned recette)
+      (if (OR (eq (car x) 'petillant ) (eq (car x) 'fruite ) )   ; Si l'element est la caracteristique petillant ou fruite
           (if (eq (TestValidityBool x) NIL)
               (return-from TestValidity NIL))
                                                                   ; L'element est soit un ingredient, soit difficulte, ou nv_alcoolemie,
@@ -102,21 +106,25 @@
                                                                           ; L'element n'est pas dans la base de fait
             (if (NOT (OR (eq (car x) 'difficulte ) (eq (car x) 'niveau_alcoolemie ))) ;Si l'element est un ingredient
                 (if (searchreplacement x recette)                                                 ; Si il y a un remplaçant
-                    (return-from TestValidity (TestValidity (searchreplacement x recette) ))      ; On rappel testvalidity avec la nouvelle recette
-                    (return-from TestValidity NIL)))                                        ; Si non on retourne NIL
+                    (setq RecetteReturned (TestValidity (searchreplacement x recette)))      ; On rappel testvalidity avec la nouvelle recette
+                    (setq RecetteReturned NIL)))                                        ; Si non on retourne NIL
             (if (< (cadr (assoc (car x) BF))(cadr x))                     ; L'element y est, on cherche si la quantité du placard est < à la quantité demandé dans la recette
                 (if (searchreplacement x recette)                                                 ; Si il y a un remplaçant
-                    (return-from TestValidity (TestValidity (searchreplacement x recette) ))      ; On rappel testvalidity avec la nouvelle recette
-                    (return-from TestValidity NIL)))                                        ; Si non on retourne NIL
-    )))
-))
+                    (setq RecetteReturned (TestValidity (searchreplacement x recette)))      ; On rappel testvalidity avec la nouvelle recette
+                    (setq RecetteReturned NIL)))                                        ; Si non on retourne NIL
+     ))))
+    RecetteReturned
+    ))
 
 ;Test
 (TestValidity '(punch ((sirop_sucre 2) (rhum 5) (difficulte 1) (petillant 0) (fruite 1) (niveau_alcoolemie 2))))
 (TestValidity '(cocktail_du_pauvre1 ((vodka 13) (sirop_citron 6) (eau 14) (difficulte 1) (petillant 0) (fruite 1) (niveau_alcoolemie 3))))
 (TestValidity '(cocktail_du_pauvre2 ((vodka 13) (sirop_grenadine 6) (eau 14) (difficulte 1) (petillant 0) (fruite 1) (niveau_alcoolemie 3))))
 (TestValidity '(cocktail_du_pauvre3 ((vodka 13) (sirop_menthe 6) (eau 14) (difficulte 1) (petillant 0) (fruite 0) (niveau_alcoolemie 3))));; ---> FAUX
-(TestValidity '(melon_ball ((jus_ananas 6) (vodka 6) (difficulte 1) (petillant 0) (fruite 1) (niveau_alcoolemie 2))))
+(TestValidity '(melon_ball ((jus_citron 2) (jus_ananas 2) (vodka 6) (difficulte 1) (petillant 0) (fruite 1) (niveau_alcoolemie 2))))
+(TestValidity '(margarita ((tequila 4) (triple_sec 2) (citron 2) (jus_citron 1) (difficulte 2) (petillant 0) (fruite 0) (niveau_alcoolemie 2))))
+(TestValidity (searchreplacement '(jus_ananas 6) '(melon_ball ((jus_ananas 6) (vodka 6) (jus_citron 2) (difficulte 1) (petillant 0) (fruite 1) (niveau_alcoolemie 2)))))
+
 ;;Si on a les attributs fruite et petillant il suffit de regarder si testValidityBool renvoi true et on continue, si renvoi false on arret
 ;;Si non il suffit de regarder si le deuxieme argument de la sous liste de la recette est >= a l'equivalent dans la base de fait
 
