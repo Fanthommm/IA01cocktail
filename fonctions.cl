@@ -7,17 +7,22 @@
             (if tmp (return-from IsKnown (car tmp)))
         )
     )
+    (dolist (x BR_Ingredient_Similaires)
+        (let ((tmp (assoc element (cadr x))))
+            (if tmp (return-from IsKnown (car tmp)))
+        )
+    )
   )
 ;Tests
-(IsKnown 'citron)
-(IsKnown 'sitron)
+;(IsKnown 'citron)
+;(IsKnown 'sitron)
 
 
 ;Retourne les conditions d'une recette, donc ses ingrÃ©dients et ses caracteristiques
 (defun conditions (recette)
   (cadr (assoc recette BR_Recette))  )
 ;Tests
-(conditions 'margarita)
+;(conditions 'margarita)
 
 
 ;Retourne que les ingrÃ©dients d'une regle
@@ -31,9 +36,9 @@
     )
   )
 ;Test
-(ListIngredients '(perroquet ((sirop_menthe 2) (ricard 4) (eau 8) (difficulte 1) (petillant 0) (fruite 0) (niveau_alcoolemie 2))))
+;(ListIngredients '(perroquet ((sirop_menthe 2) (ricard 4) (eau 8) (difficulte 1) (petillant 0) (fruite 0) (niveau_alcoolemie 2))))
 
-;Retourne que les critères d'une regle
+;Retourne que les critï¿½res d'une regle
 (defun ListCriterias (regle)
     (let ((Liste nil)(regle (cadr regle)))
         ;(format t "~s" regle)
@@ -47,7 +52,7 @@
     )
   )
 ;Tests
-(ListCriterias '(perroquet ((sirop_menthe 2) (ricard 4) (eau 8) (difficulte 1) (petillant 0) (fruite 0) (niveau_alcoolemie 2))))
+;(ListCriterias '(perroquet ((sirop_menthe 2) (ricard 4) (eau 8) (difficulte 1) (petillant 0) (fruite 0) (niveau_alcoolemie 2))))
 
 
 ;Retourne t si les attributs petillant et fruite sont acceptÃ© en fonction de ce que l'utilisateur a demandÃ©, nul si non
@@ -111,7 +116,7 @@
 
 
 ;Test
-(SearchReplacement '(jus_citron 1) '(margarita ((tequila 4) (triple_sec 2) (citron 2) (jus_citron 1) (difficulte 2) (petillant 0) (fruite 0) (niveau_alcoolemie 2))))
+;(SearchReplacement '(jus_citron 1) '(margarita ((tequila 4) (triple_sec 2) (citron 2) (jus_citron 1) (difficulte 2) (petillant 0) (fruite 0) (niveau_alcoolemie 2))))
 ;---> ("IA_MARGARITA" ((CITRON 2) (TEQUILA 4) (TRIPLE_SEC 2) (DIFFICULTE 2) (PETILLANT 0) (FRUITE 0)  (NIVEAU_ALCOOLEMIE 2)))
 
 
@@ -145,13 +150,13 @@
     ))
 
 ;Test
-(TestValidity '(punch ((sirop_sucre 2) (rhum 5) (difficulte 1) (petillant 0) (fruite 1) (niveau_alcoolemie 2))))
-(TestValidity '(cocktail_du_pauvre1 ((vodka 13) (sirop_citron 6) (eau 14) (difficulte 1) (petillant 0) (fruite 1) (niveau_alcoolemie 3))))
-(TestValidity '(cocktail_du_pauvre2 ((vodka 13) (sirop_grenadine 6) (eau 14) (difficulte 1) (petillant 0) (fruite 1) (niveau_alcoolemie 3))))
-(TestValidity '(cocktail_du_pauvre3 ((vodka 13) (sirop_menthe 6) (eau 14) (difficulte 1) (petillant 0) (fruite 0) (niveau_alcoolemie 3))));; ---> FAUX
-(TestValidity '(melon_ball ((jus_citron 2) (jus_ananas 2) (vodka 6) (difficulte 1) (petillant 0) (fruite 1) (niveau_alcoolemie 2))))
-(TestValidity '(margarita ((tequila 4) (triple_sec 2) (citron 2) (jus_citron 1) (difficulte 2) (petillant 0) (fruite 0) (niveau_alcoolemie 2))))
-(TestValidity (searchreplacement '(jus_ananas 6) '(melon_ball ((jus_ananas 6) (vodka 6) (jus_citron 2) (difficulte 1) (petillant 0) (fruite 1) (niveau_alcoolemie 2)))))
+;(TestValidity '(punch ((sirop_sucre 2) (rhum 5) (difficulte 1) (petillant 0) (fruite 1) (niveau_alcoolemie 2))))
+;(TestValidity '(cocktail_du_pauvre1 ((vodka 13) (sirop_citron 6) (eau 14) (difficulte 1) (petillant 0) (fruite 1) (niveau_alcoolemie 3))))
+;(TestValidity '(cocktail_du_pauvre2 ((vodka 13) (sirop_grenadine 6) (eau 14) (difficulte 1) (petillant 0) (fruite 1) (niveau_alcoolemie 3))))
+;(TestValidity '(cocktail_du_pauvre3 ((vodka 13) (sirop_menthe 6) (eau 14) (difficulte 1) (petillant 0) (fruite 0) (niveau_alcoolemie 3))));; ---> FAUX
+;(TestValidity '(melon_ball ((jus_citron 2) (jus_ananas 2) (vodka 6) (difficulte 1) (petillant 0) (fruite 1) (niveau_alcoolemie 2))))
+;(TestValidity '(margarita ((tequila 4) (triple_sec 2) (citron 2) (jus_citron 1) (difficulte 2) (petillant 0) (fruite 0) (niveau_alcoolemie 2))))
+;(TestValidity (searchreplacement '(jus_ananas 6) '(melon_ball ((jus_ananas 6) (vodka 6) (jus_citron 2) (difficulte 1) (petillant 0) (fruite 1) (niveau_alcoolemie 2)))))
 
 ;;Si on a les attributs fruite et petillant il suffit de regarder si testValidityBool renvoi true et on continue, si renvoi false on arret
 ;;Si non il suffit de regarder si le deuxieme argument de la sous liste de la recette est >= a l'equivalent dans la base de fait
@@ -167,10 +172,10 @@
 ;Rajouter cimetiere
 
 ;Test
-(defparameter RecettesPossibles NIL)
-(RecettesValides)
+;(defparameter RecettesPossibles NIL)
+;(RecettesValides)
 
-;; Demande à l'utilisateur de remplir la base de fait
+;; Demande ï¿½ l'utilisateur de remplir la base de fait
 (defun AskBF ()
     (format t "Quels ingredients possedez vous dans votre armoire ?~%")
     (format t "(Ecrivez STOP pour arreter)~%")
@@ -193,7 +198,7 @@
     )
 )
 
-;; Ajoute l'ingrédient dans BF (s'il existe déja additionne les qté)
+;; Ajoute l'ingrï¿½dient dans BF (s'il existe dï¿½ja additionne les qtï¿½)
 (defun addInBf (toAdd)
     (if (assoc (car toAdd) BF)
         (let ((tmp nil))
@@ -208,7 +213,7 @@
         (push toAdd BF)
     )
 )
-(addInBF '(grenadine 1))
+;(addInBF '(grenadine 1))
 
 (defun AskCriteria ()
     (let ((break T)) ;break servira Ã  interrompre la boucle si la saisie est correcte
@@ -300,16 +305,16 @@
     )
 
     ;(format t "~A~%" (reverse BF))
-    (reverse BF)
+    (setq BF (reverse BF))
 )
 ;Test
-(AskBF)
+;(AskBF)
 
 
 (defun UpdateBF (recette)
     (let ((tmp NIL)(recette (cadr recette))(stop nil))
         (dolist (x BF tmp)
-          (format t "~A~%" (car x))
+          ;(format t "~A~%" (car x))
           (if (eq (car x) 'DIFFICULTE) (setq stop T))
             (if (and (assoc (car x) recette) (eq stop nil))
                 (if (> (- (cadr x) (cadr (assoc (car x) recette))) '0)
@@ -321,4 +326,4 @@
     (setq BF (reverse tmp))
     )
 )
-(UpdateBF '(punch ((sirop_sucre 2) (rhum 5) (citron 1) (difficulte 2) (petillant 0) (fruite 1) (niveau_alcoolemie 2))))
+;(UpdateBF '(punch ((sirop_sucre 2) (rhum 5) (citron 1) (difficulte 2) (petillant 0) (fruite 1) (niveau_alcoolemie 2))))
