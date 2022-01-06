@@ -1,13 +1,13 @@
-<<<<<<< Updated upstream
-=======
 (defun main ()
-    (setq BF (AskBF))
+    (setq BF nil)
+    (AskBF)
 
     ;CREER UN MENU AVEC DEUX CHOIX : UN PREMIER BASE DE FAIT, UN DEUXIEME REGLE
 
     (let ((break T))
         (setq RecettesPossibles NIL)
         (RecettesValides)
+        ;; dire quand aucune recette n'est possible
         (dolist (x RecettesPossibles)
             (format t "~A~%" x)
         )
@@ -31,9 +31,3 @@
 )
 (main)
 
-tant que utilisateur ne rentre pas stop 
- (defparameter RecettesPossibles NIL)
- (RecettesValides) 
- choix de utilisateur 
-update bf
->>>>>>> Stashed changes

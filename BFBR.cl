@@ -1,9 +1,4 @@
-<<<<<<< Updated upstream
-(defparameter BF '((gin 50) (eau 100) (rhum 30) (rape 1) (sirop_citron 10) (tonic 20) (orange 1) (citron 3) (limonade 10) (difficulte 3)))
-=======
 (defparameter BF '((gin 50) (rhum 30) (jus_orange 8) (citron 10) (sirop_grenadine 10) (citron 4) (sirop_citron 10) (vodka 50) (eau 400) (tonic 20) (orange 3)  (sirop_sucre 2) (limonade 10) (difficulte 2) (petillant 0) (fruite -1) (niveau_alcoolemie 3)))
->>>>>>> Stashed changes
-
 
 (defparameter BR_Recette '(
                 (perroquet ((sirop_menthe 2)  (ricard 4) (eau 8) (difficulte 1) (petillant 0) (fruite 0) (niveau_alcoolemie 2)))
@@ -47,8 +42,6 @@
 )
 
 
-<<<<<<< Updated upstream
-=======
 (defparameter BF '((gin 50) (rhum 30) (rape 1) (jus_orange 8) (citron 10) (sirop_grenadine 10) (citron 4) (sirop_citron 10) (vodka 6) (eau 400) (tonic 20) (orange 3)  (sirop_sucre 2) (limonade 10) (difficulte 2) (presse 1) (petillant 0) (fruite -1) (niveau_alcoolemie 3)))
 
 (defparameter BR_Recette '(
@@ -127,5 +120,4 @@
 ;      si non : continuer 
 ;si la fonction ne s'est pas arrété a cette etape c'est qu'il n'a pas trouvé de remplaçant donc on renvoit nill
 
->>>>>>> Stashed changes
 
