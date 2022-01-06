@@ -63,7 +63,7 @@
   (return-from TestValidityBool NIL))
 
 ;Test
-(TestValidityBool '(petillant 1))      ;Retourne t si dans la BF on a (petillant 1) ou (petillant -1)
+;(TestValidityBool '(petillant 1))      ;Retourne t si dans la BF on a (petillant 1) ou (petillant -1)
 
 
 ;retourne une nouvelle recette avec l'ingrédient a remplacer (IAR) remplacé par l'ingredient remplacant (IR)
@@ -79,18 +79,6 @@
       )
      (setq NewRecette (list (concatenate 'string "IA_" (format nil "~{~a~}" (list (car recette)))) (reverse newtemp)))
 ))
-
-
-
-;(searchreplacement (liste_ingredient_quantite recette))
- ;Si il existe une regle avec cet ingrédient dans la base:
- ;Pour chaque ingrédients remplacant, ou liste d'ingredients remplaçant: (faire un dolist)
- ;      regarder si l'utilisateur possède tous les elements de cette liste et EN BONNE QUANTITE (refaire un dolist)
- ;      si oui :
- ;             modifier la recette passé en parametre en remplacant l'igrédient par tous les ingrédients qui la remplacent
- ;             retourner la recette
- ;      si non : continuer
- ;si la fonction ne s'est pas arrété a cette etape c'est qu'il n'a pas trouvé de remplaçant donc on renvoit nill
 
 
 (defun SearchReplacement(IAR recette)                                 ;IAR :ingredient a remplacer
@@ -168,8 +156,6 @@
       (if (TestValidity recette)
           (push (TestValidity recette) RecettesPossibles)))
   RecettesPossibles)
-;Strategie de chainage avant
-;Rajouter cimetiere
 
 ;Test
 ;(defparameter RecettesPossibles NIL)
