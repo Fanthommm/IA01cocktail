@@ -1,15 +1,5 @@
 ;FONCTIONS
 
-(defun ListIngredients (regle)
-    (let ((Liste nil)(regle (cadr regle)))
-        ;(format t "~s" regle)
-        (loop until (or (eq (car (car regle)) 'difficulte) (eq (car (car regle)) nil))
-            do (push (pop regle) Liste)
-        )
-        (return-from ListIngredients Liste)
-    )
-)
-
 ;Verifier si l'élement entrée en param est connu dans la Base de Règle
 (defun IsKnown (element)
     (dolist (x BR_Recette)
