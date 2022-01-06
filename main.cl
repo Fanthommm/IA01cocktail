@@ -28,7 +28,7 @@
                     (progn
                         (setq answer (assoc answer RecettesPossibles))
                         (setq continue2 nil)
-                        (format t "~A" (car answer))
+                        (format t "~%~A" (car answer))
                         (format t "a bien ete choisi ! ~%" )
                         (UpdateBF answer)
                       )
