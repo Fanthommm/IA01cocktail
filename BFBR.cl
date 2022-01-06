@@ -55,5 +55,4 @@
                 (rhum ((vodka 1)))
                 (vodka ((rhum 1)))
                 (jus_framboise ((sirop_framboise 1)(jus_fraise 1) (jus_cranberry 1) (sirop_fraise 1) (sirop_violette 1) (sirop_grenadine 1)))
-                (glacon ((eau_froide2)))))
-                                         
+                (glacon ((eau_froide2)))))                  
