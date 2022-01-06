@@ -57,23 +57,3 @@
                 (jus_framboise ((sirop_framboise 1)(jus_fraise 1) (jus_cranberry 1) (sirop_fraise 1) (sirop_violette 1) (sirop_grenadine 1)))
                 (glacon ((eau_froide2)))))
                                          
-;(Ingredient_a_remplacer ((Recette 1)(Recete 2)(Recette 3)))
-;Ex Recette 1 : ((Ingredient1 2)(Ingredient1 3))
-
-;Dans test Validity: 
-;Si un element n'est pas dans le placard de l'utilisateur:
-;On appel relacement: 
-;Si il renvoi null : il n'y a aucun remplaçannt donc la recette n'est pas faisable 
-;Si non il renvoi une recette, donc on rappel la fonction testValidyrecetet sur cette nouvelle recette 
-
-;Replacement(ingredient_a_remplacer recette);
-;Si il existe une regle avec cet ingredient dans la base:
-;Pour chaque ingrédients remplacant possible: (faire un dolist)
-;      regarder si l'utilisateur possède tous les elements de cette liste et EN BONNE QUANTITE (refaire un dolist) 
-;      si oui :
-;             modifier la recette passé en parametre en remplacant l'igrédient par tous les ingrédients qui la remplacent 
-;             retourner la recette 
-;      si non : continuer 
-;si la fonction ne s'est pas arrété a cette etape c'est qu'il n'a pas trouvé de remplaçant donc on renvoit nill
-
-
