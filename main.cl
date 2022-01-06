@@ -24,12 +24,12 @@
                (progn
                 (format t "~%Qu'elle recette choississez-vous ? Taper STOP pour arreter ~%")
                 (setq answer (read))
-                (if (not (eq (assoc answer RecettesPossibles) nil))
+                (if (not (eq (assoc answer RecettesPossibles :test #'string=) nil))
                     (progn
-                        (setq answer (assoc answer RecettesPossibles))
+                        (setq answer (assoc answer RecettesPossibles :test #'string=))
                         (setq continue2 nil)
                         (format t "~%~A" (car answer))
-                        (format t "a bien ete choisi ! ~%" )
+                        (format t " a bien ete choisi ! ~%" )
                         (UpdateBF answer)
                       )
                   (if (equal answer 'STOP)

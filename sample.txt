@@ -1,0 +1,142 @@
+MAINQuels ingredients possedez vous dans votre armoire ?
+
+CG-USER(24): Quels ingredients possedez vous dans votre armoire ?
+(Ecrivez STOP pour arreter)
+sirop_sucre 2
+Quelle quantite possedez-vous ?
+Quels ingredients possedez vous dans votre armoire ?
+(Ecrivez STOP pour arreter)
+rhum
+Quelle quantite possedez-vous ?
+5
+Quels ingredients possedez vous dans votre armoire ?
+(Ecrivez STOP pour arreter)
+citron 1
+Quelle quantite possedez-vous ?
+Quels ingredients possedez vous dans votre armoire ?
+(Ecrivez STOP pour arreter)
+stop
+Choix de la difficulte pour la recette [1-5] ?
+(Entrez -1 si vous ne voulez pas imposer de restrictions particuliÃ¨res sur la difficulte)
+4
+Choix de la petillance pour la recette [0 si non petillant, 1 si petillant] ?
+(Entrez -1 si vous ne voulez pas imposer de restrictions particulieres sur la petillance)
+0
+Cocktail fruite ? [0 si non, 1 si oui] ?
+(Entrez -1 si les deux)
+1
+Choix du taux d'alcool pour la recette [0-3] ?
+(Entrez -1 si vous ne voulez pas imposer de restrictions particulieres sur le taux d'alcool)
+3
+
+Voici les recettes valides : 
+(PUNCH
+ ((SIROP_SUCRE 2) (RHUM 5) (CITRON 1) (DIFFICULTE 1) (PETILLANT 0) (FRUITE 1)
+  (NIVEAU_ALCOOLEMIE 2)))
+
+Qu'elle recette choississez-vous ? Taper STOP pour arreter 
+punch
+SIROP_SUCRE
+RHUM
+CITRON
+DIFFICULTE
+PETILLANT
+FRUITE
+NIVEAU_ALCOOLEMIE
+
+Voici les recettes valides : 
+
+Qu'elle recette choississez-vous ? Taper STOP pour arreter 
+MAINQuels ingredients possedez vous dans votre armoire ?
+
+CG-USER(26): Quels ingredients possedez vous dans votre armoire ?
+(Ecrivez STOP pour arreter)
+sirop_menthe
+Quelle quantite possedez-vous ?
+2
+Quels ingredients possedez vous dans votre armoire ?
+(Ecrivez STOP pour arreter)
+ricard
+Quelle quantite possedez-vous ?
+4
+Quels ingredients possedez vous dans votre armoire ?
+(Ecrivez STOP pour arreter)
+eau
+Quelle quantite possedez-vous ?
+8
+Quels ingredients possedez vous dans votre armoire ?
+(Ecrivez STOP pour arreter)
+sirop_sucre
+Quelle quantite possedez-vous ?
+2
+Quels ingredients possedez vous dans votre armoire ?
+(Ecrivez STOP pour arreter)
+rhum
+Quelle quantite possedez-vous ?
+5
+Quels ingredients possedez vous dans votre armoire ?
+(Ecrivez STOP pour arreter)
+citron
+Quelle quantite possedez-vous ?
+1
+Quels ingredients possedez vous dans votre armoire ?
+(Ecrivez STOP pour arreter)
+lait_coco
+Quelle quantite possedez-vous ?
+4
+Quels ingredients possedez vous dans votre armoire ?
+(Ecrivez STOP pour arreter)
+citron
+Quelle quantite possedez-vous ?
+20
+Quels ingredients possedez vous dans votre armoire ?
+(Ecrivez STOP pour arreter)
+rhum
+Quelle quantite possedez-vous ?
+10
+Quels ingredients possedez vous dans votre armoire ?
+(Ecrivez STOP pour arreter)
+ananas
+L'ingredient est inconnu :/ 
+Quels ingredients possedez vous dans votre armoire ?
+(Ecrivez STOP pour arreter)
+jus_ananas
+Quelle quantite possedez-vous ?
+12
+Quels ingredients possedez vous dans votre armoire ?
+(Ecrivez STOP pour arreter)
+stop
+Choix de la difficulte pour la recette [1-5] ?
+(Entrez -1 si vous ne voulez pas imposer de restrictions particuliÃ¨res sur la difficulte)
+6
+6
+CG-USER(28): Choix de la petillance pour la recette [0 si non petillant, 1 si petillant] ?
+(Entrez -1 si vous ne voulez pas imposer de restrictions particulieres sur la petillance)
+Cocktail fruite ? [0 si non, 1 si oui] ?
+(Entrez -1 si les deux)
+Choix invalide 
+Cocktail fruite ? [0 si non, 1 si oui] ?
+(Entrez -1 si les deux)
+Choix invalide 
+Cocktail fruite ? [0 si non, 1 si oui] ?
+(Entrez -1 si les deux)
+6
+Choix du taux d'alcool pour la recette [0-3] ?
+(Entrez -1 si vous ne voulez pas imposer de restrictions particulieres sur le taux d'alcool)
+6
+
+Voici les recettes valides : 
+(IA_IA_MELON_BALL
+ ((CITRON 4) (RHUM 6) (JUS_ANANAS 6) (DIFFICULTE 1) (PETILLANT 0) (FRUITE 1)
+  (NIVEAU_ALCOOLEMIE 2)))
+(PINA_COLADA
+ ((LAIT_COCO 4) (RHUM 6) (JUS_ANANAS 12) (DIFFICULTE 1) (PETILLANT 0) (FRUITE 1)
+  (NIVEAU_ALCOOLEMIE 2)))
+(PUNCH
+ ((SIROP_SUCRE 2) (RHUM 5) (CITRON 1) (DIFFICULTE 1) (PETILLANT 0) (FRUITE 1)
+  (NIVEAU_ALCOOLEMIE 2)))
+(PERROQUET
+ ((SIROP_MENTHE 2) (RICARD 4) (EAU 8) (DIFFICULTE 1) (PETILLANT 0) (FRUITE 0)
+  (NIVEAU_ALCOOLEMIE 2)))
+
+Qu'elle recette choississez-vous ? Taper STOP pour arreter 
